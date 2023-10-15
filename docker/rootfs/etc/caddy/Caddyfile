@@ -3,6 +3,6 @@
 }
 
 :80 {
-    reverse_proxy / localhost:3000
     reverse_proxy /v1/embeddings localhost:3000/openai
+    reverse_proxy / localhost:3000
 }

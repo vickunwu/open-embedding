@@ -4,7 +4,7 @@ services:
       context: .
     environment:
       - CORS_ALLOW_ORIGIN=*
-    scale: 2
+    scale: 1
     ports:
       - 8080:80
     volumes:
