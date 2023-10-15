@@ -3,10 +3,10 @@ FROM ghcr.io/huggingface/text-embeddings-inference:cpu-latest
 ARG S6_ARCH=x86_64
 ARG CADDY_ARCH=linux_amd64
 
+ADD https://github.com/moparisthebest/static-curl/releases/latest/download/curl-amd64 /usr/bin/curl
+
 RUN \
-  apt-get update && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -y curl && \
-  rm -rf /var/lib/apt/lists/* && \
+  chmod +x /usr/bin/curl && \
   curl -sfL -o /tmp/s6-overlay-noarch.tar.xz https://glare.now.sh/just-containers/s6-overlay/s6-overlay-noarch.tar.xz && \
   curl -sfL -o /tmp/s6-overlay-${S6_ARCH}.tar.xz https://glare.now.sh/just-containers/s6-overlay/s6-overlay-${S6_ARCH}.tar.xz && \
   curl -sfL -o /tmp/${CADDY_ARCH}.tar.gz https://glare.now.sh/${CADDY_ARCH}.tar.gz && \
