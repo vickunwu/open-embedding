@@ -1,6 +1,7 @@
 services:
   embedding:
-    build: embedding
+    build:
+      context: .
     scale: 2
     ports:
       - 8080:80
