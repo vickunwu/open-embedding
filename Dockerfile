@@ -2,16 +2,12 @@ FROM ghcr.io/huggingface/text-embeddings-inference:cpu-latest
 
 ARG S6_ARCH=x86_64
 
-ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-noarch.tar.xz /tmp
-ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-${S6_ARCH}.tar.xz /tmp
+ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-noarch.tar.xz /
+ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-${S6_ARCH}.tar.xz /
 ADD https://caddyserver.com/api/download?os=linux&arch=amd64 /usr/bin/caddy
 
 RUN \
-  mkdir -p /data && \
-  tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz && \tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz && \
-  tar -C / -Jxpf /tmp/s6-overlay-${S6_ARCH}.tar.xz && \
   chmod +x /usr/bin/caddy && \
-  rm /tmp/*.tar.* && \
   ln -s /run /var/run
 
 COPY docker/rootfs /
