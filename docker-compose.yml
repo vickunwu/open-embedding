@@ -2,6 +2,8 @@ services:
   embedding:
     build:
       context: .
+    environment:
+      - CORS_ALLOW_ORIGIN=*
     scale: 2
     ports:
       - 8080:80

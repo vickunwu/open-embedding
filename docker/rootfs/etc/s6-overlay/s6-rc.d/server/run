@@ -1,2 +1,2 @@
 #!/command/with-contenv sh
-/usr/local/bin/text-embeddings-router -p 3000 --cors-allow-origin *
+/usr/local/bin/text-embeddings-router -p 3000
