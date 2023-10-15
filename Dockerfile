@@ -13,7 +13,8 @@ RUN \
   tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz && \
   tar -C / -Jxpf /tmp/s6-overlay-${S6_ARCH}.tar.xz && \
   tar zxf /tmp/${CADDY_ARCH}.tar.gz -C /usr/bin/ caddy && \
-  rm /tmp/*.tar.* & \
+  rm /tmp/*.tar.* && \
+  mkdir -p /data && \
   ln -s /run /var/run
 
 COPY docker/rootfs /
