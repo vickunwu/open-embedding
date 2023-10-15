@@ -1,0 +1,11 @@
+services:
+  embedding:
+    build: embedding
+    scale: 2
+    ports:
+      - 8080:80
+    volumes:
+      - model:/data
+
+volumes:
+  model:

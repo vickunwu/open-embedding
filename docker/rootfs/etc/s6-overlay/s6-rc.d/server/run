@@ -1,0 +1,2 @@
+#!/command/with-contenv sh
+/usr/local/bin/text-embeddings-router -p 3000

@@ -1,0 +1,2 @@
+#!/command/with-contenv sh
+/usr/bin/caddy run -c /etc/caddy/Caddyfile
