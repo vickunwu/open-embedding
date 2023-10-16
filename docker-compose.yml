@@ -3,11 +3,11 @@ services:
     build:
       context: .
     environment:
-      - HOSTNAME=localhost
+      - HOSTNAME=0.0.0.0
       - TOKENIZATION_WORKERS=1
     scale: 1
     ports:
-      - 80
+      - 8080:80
     volumes:
       - model:/data
 
