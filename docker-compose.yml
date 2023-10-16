@@ -3,10 +3,11 @@ services:
     build:
       context: .
     environment:
-      - CORS_ALLOW_ORIGIN=*
+      - HOSTNAME=localhost
+      - TOKENIZATION_WORKERS=1
     scale: 1
     ports:
-      - 8080:80
+      - 80
     volumes:
       - model:/data
 
