@@ -5,7 +5,9 @@ services:
     environment:
       - HOSTNAME=0.0.0.0
       - TOKENIZATION_WORKERS=1
-    scale: 1
+      - MODEL_ID=jinaai/jina-embeddings-v2-base-en
+      - REVISION=refs/pr/6
+    scale: 2
     ports:
       - 8080:80
     volumes:
