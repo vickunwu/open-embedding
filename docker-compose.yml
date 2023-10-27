@@ -7,7 +7,7 @@ services:
       - TOKENIZATION_WORKERS=1
       - MODEL_ID=jinaai/jina-embeddings-v2-base-en
       - REVISION=refs/heads/main
-    scale: 2
+    scale: 1
     ports:
       - 8080:80
     volumes:
