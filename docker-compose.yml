@@ -6,8 +6,7 @@ services:
       - HOSTNAME=0.0.0.0
       - TOKENIZATION_WORKERS=1
       - MODEL_ID=jinaai/jina-embeddings-v2-base-en
-      - REVISION=refs/pr/6
-      - POOLING=cls
+      - REVISION=refs/heads/main
     scale: 2
     ports:
       - 8080:80
